@@ -11,12 +11,12 @@ class Grid
   end
 
   def clear
+    #initializing container with dead cells... or cleaning the grid
     @container= Array.new(size_x){ Array.new(size_y){ Cell.new(0) } }
   end
 
   def draw
     #print the grid
-    #system('clear')
     @container.each do |row|
       strO = '[ '
       row.each do |col|
