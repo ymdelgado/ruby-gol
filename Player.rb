@@ -71,9 +71,13 @@ class Player
           self.menuactions
 
         when "run"
+
           if(!@grid)
             @grid= Grid.new(@rows,@cols)
           end
+          # create a process to contain a thread for
+          # execution of infinite loop and wait for
+          # a key to kill the thread
           t = Thread.new do
             i = 0
             while true
@@ -83,6 +87,7 @@ class Player
               sleep(@timeinterval)
             end
           end
+
           gets
           t.kill
 
