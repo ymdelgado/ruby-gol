@@ -14,7 +14,7 @@ class Player
     self.menuactions
   end
 
-  def menuactions
+  def menu_actions
     system('clear')
     #STDOUT.flush
     puts "="*50
@@ -34,16 +34,12 @@ class Player
 
     puts "enter command... "
     @actions = gets.chomp
-    #@grid= Grid.new
-    #@grid.draw
 
-    self.procaction
-    #x= @actions.split('>')
-    #puts x
+    self.proc_actions
 
   end
 
-  def procaction
+  def proc_actions
     if(@actions!="")
       x= @actions.split('>')
       case x[0].downcase
@@ -51,24 +47,24 @@ class Player
         when "init"
 
           @grid= Grid.new(@rows, @cols)
-          self.menuactions
+          self.menu_actions
 
         when "size"
 
           rc= x[1].split(',')
           @rows, @cols = rc[0].to_i, rc[1].to_i
           @grid= Grid.new(@rows, @cols)
-          self.menuactions
+          self.menu_actions
 
         when "time"
 
           @timeinterval = x[1].to_i
-          self.menuactions
+          self.menu_actions
 
         when "clear"
 
           @grid.clear
-          self.menuactions
+          self.menu_actions
 
         when "run"
 
@@ -91,7 +87,7 @@ class Player
           gets
           t.kill
 
-          self.menuactions
+          self.menu_actions
 
       end
     end
