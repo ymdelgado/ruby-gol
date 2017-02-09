@@ -11,7 +11,7 @@ class Player
   def initialize
     @rows, @cols= 10, 10
     @timeinterval= 1
-    self.menuactions
+    self.menu_actions
   end
 
   def menu_actions
