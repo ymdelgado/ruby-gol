@@ -7,11 +7,6 @@ class Cell
     @state= rand==1 ? Random.rand(2) : 0
   end
 
-  def state
-    #accessor
-    @state
-  end
-
   def chgstate
     # change cell status
     @state= @state==1?0:1
